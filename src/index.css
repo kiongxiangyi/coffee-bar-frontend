@@ -104,11 +104,12 @@ body {
 }
 
 img.small {
-  max-height: 8rem;
+  max-height: 10rem;
+  margin-bottom: 0.2rem;
 }
 
 button {
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 0.2rem;
   margin: 0.1rem;
   border-radius: 0.5rem;

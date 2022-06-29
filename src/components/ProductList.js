@@ -1,6 +1,16 @@
 import Product from "./Product";
+import React, { useEffect, useState } from "react";
 
-const ProductList = ({ products, addToOrder, onAdd }) => {
+const ProductList = ({ onAdd }) => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/drinks") //fetch data from backend
+      .then((res) => res.json())
+      .then((results) => setProducts(results))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <section className="block col-2">
       <h2>Bitte Produkt wählen...</h2>
@@ -9,7 +19,7 @@ const ProductList = ({ products, addToOrder, onAdd }) => {
           (
             product //get each element of array products
           ) => (
-            <Product key={product.id} product={product} onAdd={onAdd} />
+            <Product key={product.ID} product={product} onAdd={onAdd} />
           )
         )}
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import ProductList2 from "./ProductList2";
+import ProductList from "./ProductList";
 
 const showOrder = ({ orderItems, onAdd, onRemove }) => {
   return (
@@ -11,7 +11,7 @@ const showOrder = ({ orderItems, onAdd, onRemove }) => {
       <div>
         {orderItems.map((item) => (
           <div key={item.id} className="row">
-            <div className="col-2">{item.name}</div>
+            <div className="col-2">{item.Stueckliste}</div>
             <div className="col-2">
               <button onClick={() => onAdd(item)} className="add">
                 +

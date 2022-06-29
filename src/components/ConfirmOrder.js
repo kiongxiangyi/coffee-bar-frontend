@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-export default function ConfirmOrder() {
-  const [name, setName] = useState("");
+export default function ConfirmOrder({ orderItems }) {
+  const [user, setUser] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!orderItems.length) return alert("Please select at least 1 drink");
+    if (!user) return alert("Please enter a name");
 
     fetch("http://localhost:5000/orders", {
       method: "POST",
@@ -14,7 +16,8 @@ export default function ConfirmOrder() {
       },
 
       body: JSON.stringify({
-        name,
+        user,
+        orderItems,
       }),
     })
       .then((res) => res.json())
@@ -31,13 +34,12 @@ export default function ConfirmOrder() {
         <input
           type="text"
           placeholder="Max Mustermann"
-          name="name"
-          onChange={(e) => setName(e.target.value)}
+          name="user"
+          onChange={(e) => setUser(e.target.value)}
         />
         <button className="order-button" type="submit">
           Bestellen
         </button>
-        <p>{name}</p>
       </form>
     </div>
   );
