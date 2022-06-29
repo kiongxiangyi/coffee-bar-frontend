@@ -6,7 +6,7 @@ export default function ConfirmOrder() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:5000/drinks", {
+    fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
         Accept: "application/json",
