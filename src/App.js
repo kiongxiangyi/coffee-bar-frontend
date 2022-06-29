@@ -1,14 +1,10 @@
 import { useState } from "react";
 import ShowOrder from "./components/ShowOrder";
-import ProductList from "./components/ProductList";
 import ConfirmOrder from "./components/ConfirmOrder";
 import Header from "./components/Header";
-import data from "./data";
 import ProductList2 from "./components/ProductList2";
 
 function App() {
-  const { products } = data; //extract products from data
-  //const [orderlist, setOrderlist] = useState([]);
   const [orderItems, setOrderItems] = useState([]);
   const onAdd = (product) => {
     const exist = orderItems.find((x) => x.id === product.id);
@@ -35,11 +31,6 @@ function App() {
       );
     }
   };
-  /*  const addToOrder = (order) => {
-    const list = [...orderlist, order];
-
-    setOrderlist(list);
-  }; */
 
   return (
     <>
@@ -48,7 +39,7 @@ function App() {
         <ProductList2 />
         {/* <ProductList onAdd={onAdd} products={products} /> */}
       </div>
-      
+
       <ShowOrder onAdd={onAdd} onRemove={onRemove} orderItems={orderItems} />
       <ConfirmOrder />
     </>

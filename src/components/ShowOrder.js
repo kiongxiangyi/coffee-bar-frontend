@@ -1,5 +1,5 @@
 import React from "react";
-import ProductList from "./ProductList";
+import ProductList2 from "./ProductList2";
 
 const showOrder = ({ orderItems, onAdd, onRemove }) => {
   return (
