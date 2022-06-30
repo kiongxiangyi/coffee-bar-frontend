@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ConfirmOrder({ orderItems }) {
   const [user, setUser] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!orderItems.length) return alert("Please select at least 1 drink");
-    if (!user) return alert("Please enter a name");
+    if (!orderItems.length)
+      return toast.error("Please select at least 1 drink");
+    if (!user) return toast.error("Please enter a name");
 
+    toast.success("Thank you for your order!");
     fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
@@ -39,7 +43,8 @@ export default function ConfirmOrder({ orderItems }) {
         />
         <button className="order-button" type="submit">
           Bestellen
-        </button>
+        </button>{" "}
+        <ToastContainer />
       </form>
     </div>
   );
