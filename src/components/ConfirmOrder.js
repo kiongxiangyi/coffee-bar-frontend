@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ConfirmOrder({ orderItems }) {
   const [user, setUser] = useState("");
+  const [userDB, setUserDB] = useState([]); //users in DB
+
+  useEffect(() => {
+    fetch("http://localhost:5000/users")
+      .then((res) => res.json())
+      .then((results) => setUserDB(results)) //fetch users from tblUser DB
+      .catch((err) => console.log(err));
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!orderItems.length)
       return toast.error("Please select at least 1 drink");
     if (!user) return toast.error("Please enter a name");
+    //if not found user in DB, deny order
+    //check if user exists in DB
+    const checkUser = userDB.find((tblUser) => tblUser.Benutzer === user);
+    if (checkUser) {
+      toast.success("Thank you for your order!");
+    } else {
+      toast.error("Please register your name at Gühring Booth");
+    }
 
-    toast.success("Thank you for your order!");
     fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
