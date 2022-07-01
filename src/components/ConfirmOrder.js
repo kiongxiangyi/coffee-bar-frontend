@@ -18,13 +18,13 @@ export default function ConfirmOrder({ orderItems }) {
     if (!orderItems.length)
       return toast.error("Please select at least 1 drink");
     if (!user) return toast.error("Please enter a name");
-    //if not found user in DB, deny order
+
     //check if user exists in DB
     const checkUser = userDB.find((tblUser) => tblUser.Benutzer === user);
-    if (checkUser) {
-      toast.success("Thank you for your order!");
+    if (!checkUser) {
+      return toast.error("Please register your name at Gühring Booth");
     } else {
-      toast.error("Please register your name at Gühring Booth");
+      return toast.success("Thank you for your order!");
     }
 
     fetch("http://localhost:5000/orders", {
