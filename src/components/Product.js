@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Product({ onAdd, product }) {
   return (
-    <div key={product.id} className="card">
+    <div className="card">
       <h3>{product.Stueckliste}</h3>
       <img
         className="small"

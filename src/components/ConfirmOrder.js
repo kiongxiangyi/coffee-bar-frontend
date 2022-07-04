@@ -24,7 +24,7 @@ export default function ConfirmOrder({ orderItems }) {
     if (!checkUser) {
       return toast.error("Please register your name at Gühring Booth");
     } else {
-      return toast.success("Thank you for your order!");
+      toast.success("Thank you for your order!");
     }
 
     fetch("http://localhost:5000/orders", {
