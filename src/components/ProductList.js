@@ -5,25 +5,27 @@ const ProductList = ({ onAdd }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/drinks") //fetch data from backend
+    fetch(`${process.env.REACT_APP_API}/drinks`) //fetch data from backend
       .then((res) => res.json())
       .then((results) => setProducts(results))
       .catch((err) => console.log(err));
   }, []);
 
   return (
-    <section className="block col-2">
+    <div className="block2">
       <h2>Bitte Produkt wählen...</h2>
-      <div className="row">
-        {products.map(
-          (
-            product //get each element of array products
-          ) => (
-            <Product key={product.ID} product={product} onAdd={onAdd} />
-          )
-        )}
+      <div className="container">
+        <div className="row g-3">
+          {products.map(
+            (
+              product //get each element of array products
+            ) => (
+              <Product key={product.ID} product={product} onAdd={onAdd} />
+            )
+          )}
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

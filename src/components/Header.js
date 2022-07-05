@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="row2 block2 center">
+    <header className="block">
       <div>
         <h1 className="header">Gühring AMB Kaffeebar</h1>
       </div>

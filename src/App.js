@@ -36,11 +36,9 @@ function App() {
   return (
     <>
       <Header />
-      <div className="row">
-        <ProductList onAdd={onAdd} />
-      </div>
+      <ProductList onAdd={onAdd} />
       <ShowOrder onAdd={onAdd} onRemove={onRemove} orderItems={orderItems} />
-      <ConfirmOrder orderItems={orderItems} />
+      <ConfirmOrder orderItems={orderItems} setOrderItems={setOrderItems} />
     </>
   );
 }

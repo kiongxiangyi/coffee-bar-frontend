@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function ConfirmOrder({ orderItems }) {
+export default function ConfirmOrder({ orderItems, setOrderItems }) {
   const [user, setUser] = useState("");
   const [userDB, setUserDB] = useState([]); //users in DB
 
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch(`${process.env.REACT_APP_API}/users`)
       .then((res) => res.json())
       .then((results) => setUserDB(results)) //fetch users from tblUser DB
       .catch((err) => console.log(err));
@@ -27,7 +27,7 @@ export default function ConfirmOrder({ orderItems }) {
       toast.success("Thank you for your order!");
     }
 
-    fetch("http://localhost:5000/orders", {
+    fetch(`${process.env.REACT_APP_API}/orders`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -40,25 +40,29 @@ export default function ConfirmOrder({ orderItems }) {
       }),
     })
       .then((res) => res.json())
-      .then((res) => console.log(res))
+      .then((res) => {
+        setOrderItems([]);
+        setUser("");
+      })
       .catch((err) => console.log(err));
   };
 
   return (
-    <div className="block col-1">
+    <div className="block">
       <h2>Mein Name...</h2>
-      <form onSubmit={handleSubmit}>
-        {" "}
+      <form className="form-group" onSubmit={handleSubmit}>
         {/* if onSubmit direct on button, it may bypass in Chrome by just click "Enter" */}
         <input
+          className="form-control"
           type="text"
           placeholder="Max Mustermann"
           name="user"
+          value={user}
           onChange={(e) => setUser(e.target.value)}
         />
-        <button className="order-button" type="submit">
+        <button className="order btn btn-primary btn-md col-12" type="submit">
           Bestellen
-        </button>{" "}
+        </button>
         <ToastContainer />
       </form>
     </div>
