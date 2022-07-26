@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+.language-select {
+  float: right;
+  margin-top: -35px;
+}
+
 .block {
   background-color: #ffe100;
   margin: 0.3rem;

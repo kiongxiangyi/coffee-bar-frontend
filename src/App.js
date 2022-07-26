@@ -1,25 +1,15 @@
 import { useState } from "react";
+import React from "react";
 import ShowOrder from "./components/ShowOrder";
 import ConfirmOrder from "./components/ConfirmOrder";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
-import { FormattedMessage, IntlProvider } from "react-intl";
+import Navigation from "./components/Navigation";
+import i18n from "./i18n";
+import Loading from "./components/Loading";
+import LocaleContext from "./LocaleContext";
 
 function App() {
-  const translation = {
-    en: {
-      heading: "Gühring AMB Coffee Bar",
-    },
-    de: {
-      heading: "Gühring AMB Kaffeebar",
-    },
-  };
-
-  const [locale, setLocale] = useState("de");
-  const handleChange = (e) => {
-    setLocale(e.target.value);
-  };
-
   const [orderItems, setOrderItems] = useState([]);
   const onAdd = (product) => {
     const exist = orderItems.find((x) => x.ID === product.ID);
@@ -48,26 +38,24 @@ function App() {
     }
   };
 
+  const [locale, setLocale] = useState(i18n.language);
+  i18n.on("languageChanged", (lng) => setLocale(i18n.language));
+
   return (
     <>
-      <select onChange={handleChange} defaultValue={locale}>
-        {["en", "de"].map((x) => (
-          <option key={x}>{x}</option>
-        ))}
-      </select>
-      <IntlProvider locale={locale} messages={translation[locale]}>
-        <p>
-          <FormattedMessage
-            id="heading"
-            defaultMessage="DEFAULT MESSAGE"
-            value={{ locale }}
-          ></FormattedMessage>
-        </p>
-      </IntlProvider>
-      <Header translation={translation}/>
-      <ProductList onAdd={onAdd} />
-      <ShowOrder onAdd={onAdd} onRemove={onRemove} orderItems={orderItems} />
-      <ConfirmOrder orderItems={orderItems} setOrderItems={setOrderItems} />
+      <LocaleContext.Provider value={{ locale, setLocale }}>
+        <React.Suspense fallback={<Loading />}>
+          <Navigation />
+          <Header />
+          <ProductList onAdd={onAdd} />
+          <ShowOrder
+            onAdd={onAdd}
+            onRemove={onRemove}
+            orderItems={orderItems}
+          />
+          <ConfirmOrder orderItems={orderItems} setOrderItems={setOrderItems} />
+        </React.Suspense>
+      </LocaleContext.Provider>
     </>
   );
 }
