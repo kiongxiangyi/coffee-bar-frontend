@@ -39,6 +39,7 @@ export default function ConfirmOrder({ orderItems, setOrderItems }) {
       body: JSON.stringify({
         user,
         orderItems,
+        table
       }),
     })
       .then((res) => res.json())
