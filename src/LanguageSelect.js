@@ -10,8 +10,8 @@ import ListItem from "@mui/material/ListItem";
 import ListSubheader from "@mui/material/ListSubheader";
 
 const languageMap = {
-  en: { label: "English", active: true },
-  de: { label: "Deutsch", active: false },
+  de: { label: "Deutsch", active: true },
+  en: { label: "English", active: false },
 };
 
 const LanguageSelect = () => {

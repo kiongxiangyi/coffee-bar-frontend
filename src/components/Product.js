@@ -1,4 +1,5 @@
 import React from "react";
+import i18n from "../i18n";
 
 export default function Product({ onAdd, product }) {
   return (
@@ -15,7 +16,7 @@ export default function Product({ onAdd, product }) {
           className="add btn btn-primary btn-sm"
           onClick={() => onAdd(product)}
         >
-          In den Warenkorb
+          {i18n.t("basket")}
         </button>
       </div>
     </div>

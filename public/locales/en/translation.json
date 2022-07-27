@@ -1,5 +1,16 @@
 {
   "title": "Gühring AMB Coffee Bar",
-  "text": "Thank you for visiting our website.",
-  "language": "English"
+  "language": "EN",
+  "product": "What would you like to drink?",
+  "myOrder": "My Orders...",
+  "noOrder": "No order",
+  "quantity": "Quantity:",
+  "basket": "Add to Basket",
+  "name": "My Name",
+  "tableNumber": "Table Number",
+  "order": "Order now",
+  "selectDrink": "Please select at least 1 drink.",
+  "inputName": "Please enter a name.",
+  "registerName": "Please register your name at Gühring Booth.",
+  "thankYou": "Thank you for your order!"
 }

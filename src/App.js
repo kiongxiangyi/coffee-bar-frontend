@@ -2,12 +2,12 @@ import { useState } from "react";
 import React from "react";
 import ShowOrder from "./components/ShowOrder";
 import ConfirmOrder from "./components/ConfirmOrder";
-import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 import Navigation from "./components/Navigation";
 import i18n from "./i18n";
 import Loading from "./components/Loading";
 import LocaleContext from "./LocaleContext";
+import Header from "./components/Header";
 
 function App() {
   const [orderItems, setOrderItems] = useState([]);

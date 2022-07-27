@@ -8,11 +8,6 @@ export default function Header() {
       <div>
         <h1 className="header">{t('title')}</h1>
       </div>
-      {/* <div>
-        <a href="#order-list">
-          <h1>Bestellung</h1>
-        </a>
-      </div> */}
     </header>
   );
 }
