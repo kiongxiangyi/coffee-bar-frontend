@@ -40,7 +40,7 @@ function App() {
 
   const [locale, setLocale] = useState(i18n.language);
   i18n.on("languageChanged", (lng) => setLocale(i18n.language));
-  
+
   return (
     <>
       <LocaleContext.Provider value={{ locale, setLocale }}>
@@ -53,7 +53,11 @@ function App() {
             onRemove={onRemove}
             orderItems={orderItems}
           />
-          <ConfirmOrder orderItems={orderItems} setOrderItems={setOrderItems} locale={locale} />
+          <ConfirmOrder
+            orderItems={orderItems}
+            setOrderItems={setOrderItems}
+            locale={locale}
+          />
         </React.Suspense>
       </LocaleContext.Provider>
     </>

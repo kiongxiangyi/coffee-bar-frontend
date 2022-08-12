@@ -80,6 +80,12 @@ button {
   margin: 0.5rem 0;
 }
 
+.logo .mobile {
+  float: left;
+  width: 150px;
+  height: 50px;
+}
+
 /*
 a {
   text-decoration: none;
