@@ -6,11 +6,11 @@
   "noOrder": "Keine Bestellung",
   "quantity": "Menge:",
   "basket": "In den Warenkorb",
-  "name": "Mein Name",
+  "name": "Bestell-PIN",
   "tableNumber": "Tischnummer",
   "order": "Jetzt bestellen",
   "selectDrink": "Bitte Produkte auswählen.",
-  "inputName": "Bitte Namen eingeben.",
-  "registerName": "Bitte Ihren Namen am Gühring Stand registrieren.",
+  "inputName": "Bitte PIN eingeben.",
+  "registerName": "Ihre PIN ist nicht gültig. Bitte am Gühring Stand registrieren.",
   "thankYou": "Vielen Dank für Ihre Bestellung!"
 }

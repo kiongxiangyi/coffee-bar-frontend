@@ -23,7 +23,7 @@ export default function ConfirmOrder({ orderItems, setOrderItems, locale }) {
     if (!user) return toast.error(t("inputName"));
 
     //check if user exists in DB
-    const checkUser = userDB.find((tblUser) => tblUser.Benutzer === user);
+    const checkUser = userDB.find((tblUser) => tblUser.Pin === user);
     if (!checkUser) {
       return toast.error(t("registerName"));
     } else {
@@ -60,7 +60,6 @@ export default function ConfirmOrder({ orderItems, setOrderItems, locale }) {
         <input
           className="form-control"
           type="text"
-          placeholder="Max Mustermann"
           name="user"
           value={user}
           onChange={(e) => setUser(e.target.value)}

@@ -82,8 +82,9 @@ button {
 
 .logo .mobile {
   float: left;
-  width: 150px;
+  width: 130px;
   height: 50px;
+  object-fit: contain;
 }
 
 /*

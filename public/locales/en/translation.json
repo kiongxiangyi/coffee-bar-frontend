@@ -6,11 +6,11 @@
   "noOrder": "No order",
   "quantity": "Quantity:",
   "basket": "Add to Basket",
-  "name": "My Name",
+  "name": "Order PIN",
   "tableNumber": "Table Number",
   "order": "Order now",
   "selectDrink": "Please select at least 1 drink.",
-  "inputName": "Please enter a name.",
-  "registerName": "Please register your name at Gühring Booth.",
+  "inputName": "Please enter a PIN.",
+  "registerName": "Your PIN is not valid. Please register at Gühring Booth.",
   "thankYou": "Thank you for your order!"
 }
