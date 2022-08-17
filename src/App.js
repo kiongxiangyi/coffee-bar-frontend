@@ -8,6 +8,7 @@ import i18n from "./i18n";
 import Loading from "./components/Loading";
 import LocaleContext from "./LocaleContext";
 import Header from "./components/Header";
+import Logo from "./components/Logo";
 
 function App() {
   const [orderItems, setOrderItems] = useState([]);
@@ -45,6 +46,7 @@ function App() {
     <>
       <LocaleContext.Provider value={{ locale, setLocale }}>
         <React.Suspense fallback={<Loading />}>
+          {/* <Logo /> */}
           <Navigation />
           <Header />
           <ProductList onAdd={onAdd} />

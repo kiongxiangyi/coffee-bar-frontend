@@ -1,9 +1,9 @@
 import Product from "./Product";
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+//import { useTranslation } from "react-i18next";
 
 const ProductList = ({ onAdd }) => {
-  const { t } = useTranslation();
+  //const { t } = useTranslation();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -15,9 +15,9 @@ const ProductList = ({ onAdd }) => {
 
   return (
     <div className="block2">
-      <h2>{t("product")}</h2>
+      {/* <h2>{t("product")}</h2> */}
       <div className="container">
-        <div className="row g-3">
+        <div className="middle row g-3">
           {products.map(
             (
               product //get each element of array products
