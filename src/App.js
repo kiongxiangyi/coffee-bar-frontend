@@ -46,7 +46,7 @@ function App() {
     <>
       <LocaleContext.Provider value={{ locale, setLocale }}>
         <React.Suspense fallback={<Loading />}>
-          {/* <Logo /> */}
+          <Logo />
           <Navigation />
           <Header />
           <ProductList onAdd={onAdd} />

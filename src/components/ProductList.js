@@ -16,8 +16,8 @@ const ProductList = ({ onAdd }) => {
   return (
     <div className="block2">
       {/* <h2>{t("product")}</h2> */}
-      <div className="container">
-        <div className="middle row g-3">
+      <div className="middle">
+        <div className="row g-2">
           {products.map(
             (
               product //get each element of array products
