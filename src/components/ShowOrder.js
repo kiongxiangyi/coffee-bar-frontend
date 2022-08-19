@@ -5,28 +5,31 @@ const ShowOrder = ({ orderItems, onAdd, onRemove }) => {
   const { t } = useTranslation();
   return (
     <div className="block">
-      <div id="order-list">
+      <div className="background">
         <h2>{t("myOrder")}</h2>
         <div className="container">
-          <div>{orderItems.length === 0 && <div>{t("noOrder")}</div>}</div>
+          <div>{orderItems.length === 0 && <h3>{t("noOrder")}</h3>}</div>
           <div className="row">
             {orderItems.map((item) => (
-              <div key={item.ID} className="d-flex justify-content-between">
-                <div className="col-2">{item.Stueckliste}</div>
-                <div>
+              <div key={item.ID} className="d-flex justify-content-around">
+                <div className="col-2 text-left">{item.Stueckliste}</div>
+                <div className="marginBackground">
                   <button
                     onClick={() => onAdd(item)}
-                    className="addRemove btn btn-success btn-sm"
+                    className="addRemove btn btn-sm"
                   >
                     +
                   </button>
+                </div>
+                <div className="marginBackground">
                   <button
                     onClick={() => onRemove(item)}
-                    className="addRemove btn btn-danger btn-sm"
+                    className="addRemove btn btn-sm"
                   >
                     -
                   </button>
                 </div>
+
                 <div className="col-2 text-right">
                   {t("quantity")} {item.qty}
                 </div>

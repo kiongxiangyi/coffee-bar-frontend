@@ -1,14 +1,33 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Calibri;
+  font-family: 'Helvetica Neue LT W1G', sans-serif;
+  background-color: #e7e7e7;
+}
+
+.background {
+  background-color: #ffe100;
+  background-clip: border-box;
+}
+
+.marginBackground {
+  background-color: #ffe100;
+  background-clip: border-box;
+}
+
+.container {
+  background-color: #ffe100;
+  background-clip: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-right {
   float: right;
-  padding: 0.1rem;
-  margin-right: 0.3rem;
-  margin-top: 0;
+}
+
+img {
+  background-color: #ffe100;
 }
 
 .header {
@@ -16,16 +35,16 @@
 }
 
 .block {
-  background-color: #ffff00;
+  background-color: #ffe100;
   margin: 0.3rem;
-  padding: 0.1rem;
   border-radius: 0.3rem;
+  padding: 0.01rem;
 }
 
 .block2 {
   margin: 0.3rem;
-  padding: 0.1rem;
   border-radius: 0.3rem;
+  padding: 0.01rem;
 }
 
 .card-title img {
@@ -33,43 +52,55 @@
   width: 100px;
   height: 100px;
   object-fit: contain;
+  background-color: #ffe100;
 }
 
 h1 {
-  font-size: 1.5rem;
-  text-align: left;
+  font-size: 1.4rem;
+  text-align: center;
   padding-left: 0.2rem;
+  background-color: #ffe100;
+  margin-top: 0.4rem;
 }
 
 h2 {
   font-size: 1.2rem;
   padding: 0.2rem;
+  background-color: #ffe100;
+  margin-top: 0.4rem;
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  background-color: #ffe100;
+  margin-top: 0.4rem;
 }
 
 .card {
-  background-color: #ffff00;
+  background-color: #ffe100;
   border-radius: 8px;
   padding: 0.3rem;
-  box-shadow: 0px 5px 5px #b2bec3;
+  box-shadow: 0px 2px 2px #999999;
   text-align: center;
   margin: 0.2rem;
 }
 
 button.addRemove {
+  padding: 0rem 0.4rem;
+  background-color: #999999; 
+  color: white;
+  font-size: 1rem;
   margin: 0.1rem 0.2rem;
 }
 
-button {
-  margin-top: 0.4rem;
-}
-
-
 .text-right {
   text-align: right;
+  padding-right: 1rem;
+}
+
+.text-left {
+  text-align: left;
+  padding-left: 1rem;
 }
 
 .col-1 {
@@ -78,11 +109,7 @@ button {
 
 .col-2 {
   flex: 2;
-}
-
-.container {
-  margin: 0.5rem 0.3rem;
-  padding: 0 0.1rem;
+  background-color: #ffe100;
 }
 
 .header img {
@@ -93,10 +120,35 @@ button {
   max-height: 100%;
 }
 
+.add {
+  background-color: #999999; 
+  color: white;
+  font-size: 0.8rem;
+}
+
+.order {
+  background-color: #999999; 
+  color: white;
+  margin-top: 0.4rem;
+  
+}
+
+.add:hover {
+  background-color:#e7e7e7;
+  transition: 0.7s;
+}
+
+.order:hover {
+  background-color: #e7e7e7; 
+  transition: 0.7s;
+}
+
 @media (max-width:480px) {
 .middle {
   justify-content: space-between;
 }
+
+
   
 }
 

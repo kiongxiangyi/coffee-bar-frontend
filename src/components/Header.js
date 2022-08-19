@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <>
       <div className="block">
-        <h1 className="header">{t("title")}</h1>
+        <h1>{t("title")}</h1>
       </div>
     </>
   );

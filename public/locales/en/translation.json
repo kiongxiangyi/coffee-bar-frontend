@@ -7,7 +7,7 @@
   "quantity": "Quantity:",
   "basket": "Add to Basket",
   "name": "Order PIN",
-  "tableNumber": "Table Number",
+  "tableNumber": "Table Number (Optional)",
   "order": "Order now",
   "selectDrink": "Please select at least 1 drink.",
   "inputName": "Please enter a PIN.",

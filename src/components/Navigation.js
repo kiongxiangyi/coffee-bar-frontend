@@ -15,20 +15,22 @@ function Navigation() {
   }
 
   return (
-    <Navbar className="nav-right">
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto ">
-          <NavDropdown title={t("language")} id="basic-nav-dropdown">
-            <NavDropdown.Item href="#" onClick={() => changeLocale("de")}>
-              DE
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#" onClick={() => changeLocale("en")}>
-              EN
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <div>
+      <Navbar className="nav-right">
+        <Navbar.Collapse id="basic-navbar-nav" className="">
+          <Nav className="me-auto">
+            <NavDropdown title={t("language")} id="basic-nav-dropdown">
+              <NavDropdown.Item href="#" onClick={() => changeLocale("de")}>
+                DE
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#" onClick={() => changeLocale("en")}>
+                EN
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
   );
 }
 

@@ -55,7 +55,7 @@ export default function ConfirmOrder({ orderItems, setOrderItems, locale }) {
   return (
     <div className="block">
       <h2>{t("name")}</h2>
-      <form className="form-group" onSubmit={handleSubmit}>
+      <form className="form-group background" onSubmit={handleSubmit}>
         {/* if onSubmit direct on button, it may bypass in Chrome by just click "Enter" */}
         <input
           className="form-control"
@@ -71,7 +71,7 @@ export default function ConfirmOrder({ orderItems, setOrderItems, locale }) {
           value={table}
           onChange={(e) => setTable(e.target.value)}
         />
-        <button className="order btn btn-primary btn-md col-12" type="submit">
+        <button className="order btn btn-md col-12" type="submit">
           {t("order")}
         </button>
         <ToastContainer />

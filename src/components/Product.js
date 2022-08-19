@@ -13,7 +13,7 @@ export default function Product({ onAdd, product }) {
         ></img>
 
         <button
-          className="add btn btn-primary btn-sm"
+          className="add btn btn-sm"
           onClick={() => onAdd(product)}
         >
           {i18n.t("basket")}

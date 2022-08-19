@@ -1,5 +1,5 @@
 {
-  "title": "Kaffeebar",
+  "title": "KAFFEEBAR",
   "language": "DE",
   "product": "Was möchten Sie trinken?",
   "myOrder": "Meine Bestellungen",
@@ -7,7 +7,7 @@
   "quantity": "Menge:",
   "basket": "In den Warenkorb",
   "name": "Bestell-PIN",
-  "tableNumber": "Tischnummer",
+  "tableNumber": "Tischnummer (Optional)",
   "order": "Jetzt bestellen",
   "selectDrink": "Bitte Produkte auswählen.",
   "inputName": "Bitte PIN eingeben.",
