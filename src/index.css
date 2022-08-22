@@ -37,6 +37,9 @@
   
 }
 
+.row {
+  margin: 0.3rem;
+}
 
 img {
   background-color: #ffe100;
