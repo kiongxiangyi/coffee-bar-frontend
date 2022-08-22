@@ -3,7 +3,6 @@ import React from "react";
 import ShowOrder from "./components/ShowOrder";
 import ConfirmOrder from "./components/ConfirmOrder";
 import ProductList from "./components/ProductList";
-import Navigation from "./components/Navigation";
 import i18n from "./i18n";
 import Loading from "./components/Loading";
 import LocaleContext from "./LocaleContext";
@@ -47,7 +46,6 @@ function App() {
       <LocaleContext.Provider value={{ locale, setLocale }}>
         <React.Suspense fallback={<Loading />}>
           <Logo />
-          {/* <Navigation /> */}
           <Header />
           <ProductList onAdd={onAdd} />
           <ShowOrder
