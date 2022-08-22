@@ -68,6 +68,7 @@ export default function ConfirmOrder({ orderItems, setOrderItems, locale }) {
         <input
           className="form-control"
           type="text"
+          name="table"
           value={table}
           onChange={(e) => setTable(e.target.value)}
         />
