@@ -8,10 +8,13 @@ const ShowOrder = ({ orderItems, onAdd, onRemove }) => {
       <div className="background">
         <h2>{t("myOrder")}</h2>
         <div className="container">
-          <div>{orderItems.length === 0 && <h3>{t("noOrder")}</h3>}</div>
+          {orderItems.length === 0 && <h3>{t("noOrder")}</h3>}
           <div className="row">
             {orderItems.map((item) => (
-              <div key={item.ID} className="d-flex justify-content-around">
+              <div
+                key={item.ID}
+                className="d-flex justify-content-around background"
+              >
                 <div className="col-2 text-left">{item.Stueckliste}</div>
                 <div className="marginBackground">
                   <button
