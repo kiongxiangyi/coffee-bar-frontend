@@ -48,6 +48,7 @@ export default function ConfirmOrder({ orderItems, setOrderItems, locale }) {
       .then((res) => {
         setOrderItems([]);
         setUser("");
+        setTable("");
       })
       .catch((err) => console.log(err));
   };
