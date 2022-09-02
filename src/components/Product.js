@@ -8,7 +8,7 @@ export default function Product({ onAdd, product }) {
         <h3 className="card-title">{product.Stueckliste}</h3>
         <img
           className="card-img-top"
-          src={`/Kaffee_Bilder/${product.Stueckliste}.png`}
+          src={product.Bemerkung}
           alt={product.Stueckliste}
         ></img>
 
