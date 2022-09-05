@@ -22,13 +22,25 @@ export default function ConfirmOrder({ orderItems, setOrderItems, locale }) {
     if (!orderItems.length) return toast.error(t("selectDrink"));
     if (!user) return toast.error(t("inputName"));
 
-    //check if user exists in DB
-    const checkUser = userDB.find((tblUser) => tblUser.Pin === user);
-    if (!checkUser) {
-      return toast.error(t("registerName"));
-    } else {
-      toast.success(t("thankYou"));
-    }
+    //check if pin exists in DB
+    let md5 = require("md5");
+    let md5User = md5(user);
+    //console.log("md5: ", md5User);
+
+    let bcrypt = require("bcryptjs");
+    bcrypt.hash(md5User, "$2a$11$5ojifDAswy9s6eYlH8cuoO", function (err, hash) { //hash with GTMS defined string
+      // Store hash in your password DB.
+      //console.log("hash: ", hash);
+
+      const findUser = userDB.find((tblUser) => tblUser.Pin === hash);
+      //console.log("match: ", findUser);
+      if (!findUser) {
+        return toast.error(t("registerName"));
+      } else {
+        toast.success(t("thankYou"));
+      }
+      
+    });
 
     fetch(`${process.env.REACT_APP_API}/orders`, {
       method: "POST",
